@@ -35,12 +35,17 @@ stream_stats<-read.csv("D://GEOG_4300/1111111.csv")
 ```{r}
 ggplot(stream_stats, aes(x=Basin.area, y=Channel.Width))+
   geom_point(size=3)+
-  scale_y_log10()+
-  scale_x_log10()+
+  scale_x_continuous(trans = "log2")+
+  scale_y_continuous(trans="log2")+
   theme_bw()+
   labs(x="Basin Area (square miles)", y="Channel Width (feet)")+
   geom_smooth(method = lm, se = FALSE, )
   
+```
+
+
+```{r}
+
 ```
 
 
